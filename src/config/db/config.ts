@@ -1,5 +1,11 @@
+import dotenv from "dotenv";
+import path from "path";
+
+dotenv.config({
+  path: path.resolve(__dirname, "./../../../", `.env.${process.env.NODE_ENV}`),
+});
+console.log("env", process.env.NODE_ENV);
 import { Dialect, Sequelize } from "sequelize";
-import "dotenv/config";
 
 const dbName = process.env.DATABASE_NAME as string;
 

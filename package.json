@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "nodemon",
+    "dev": " cross-env NODE_ENV=development nodemon dotenv/config src/index.ts ",
+    "test":"cross-env NODE_ENV=test nodemon nodemon dotenv/config src/index.ts",
     "watch": "tsc -w",
     "create-module": "node createModule.js"
   },
@@ -21,6 +22,7 @@
     "@types/passport-jwt": "^4.0.1",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "i18next": "^24.2.1",
